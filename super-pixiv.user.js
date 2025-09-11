@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name     SuperPixiv
-// @version  12
+// @version  13
 // @match    https://www.pixiv.net/*
 // @updateURL https://github.com/Tina-otoge/SuperPixiv/raw/master/super-pixiv.user.js
 // ==/UserScript==
 
-const PROXY_URL = 'https://pximg.perennialte.ch';
+const PROXY_URL = 'https://pixiv.ducks.party';
 
 async function insert_viewer(id) {
   const viewer = document.createElement("div");
@@ -72,7 +72,8 @@ async function insert_viewer(id) {
       const video = document.createElement("video");
       const id = meta.illustId;
       const prefix = "0" + id.slice(0, 3);
-      video.src = `https://i.ugoira.com/mp4/${prefix}/${id}.mp4`;
+      // video.src = `https://i.ugoira.com/mp4/${prefix}/${id}.mp4`;
+	  video.src = `https://t-hk.ugoira.com/ugoira/${id}.mp4`;
       video.autoplay = true;
       video.controls = true;
       video.loop = true;
